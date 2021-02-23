@@ -1,7 +1,6 @@
 #include <math.h>
 #include <iostream>
 #include "Poloha.h"
-//#include "pca9685.h"
 
 /// BORIS JA VIEM ZE NA TO ZABUDNES TAK TI PRIPOMINAM...NA POHYB MAS FUNKCIU pohyb ///
 ///                             DAKUJEM, S LASKOU BORIS                            ///
@@ -36,8 +35,11 @@ public:
 
 	Poloha hore;
 
-	int adresa;
 	int pin;
+	int basePIN;
+	
+	int mapMAX;
+	int mapMIN;
 	
 
 
@@ -62,6 +64,8 @@ public:
 		return sqrtf(x*x + y*y + z*z);
 	}
 	
+	
+	
 	void pohyb(struct Poloha Ciel) ////// TOTO JE HLAVNE
 	{
 		//cout <<"OFA"<< magnitude(start,Ciel)<<endl;
@@ -85,7 +89,13 @@ public:
 		//cout << "\nChyba: " << magnitude(Ciel, point2)<<endl;
 		uhly();
 		
+		
+		
 	}
+
+	
+
+	
 	struct Poloha fabrik(struct Poloha Start, struct Poloha End, float Dlzka) /// start je hodnota ktora sa pocita
 	{
 		vektor.x = Start.x - End.x;
@@ -127,14 +137,16 @@ public:
 	noha();
 	noha(float StartX, float StartZ, struct Poloha NormalServa, int Pin, int Adresa)
 	{
-		pin = pin;
+		pin = Pin;
 		start.x = StartX;
 		start.z = StartZ;
 		start.y = 50;
 		normalServa = NormalServa;
 		hore.y = 1;
 
-		//int servo = pca9685Setup(300, Adresa, 50);
+
+		
+		
 
 	}
 

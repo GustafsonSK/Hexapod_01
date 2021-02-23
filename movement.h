@@ -1,10 +1,11 @@
-#pragma once
 #include "Poloha.h"
 class movement
 {
 public:
 
-	float krok = 10;
+	float krok = 30;
+	int doleI = -50;
+	int hore = 10;
 
 	Poloha Ciel1;
 	Poloha Ciel2;
