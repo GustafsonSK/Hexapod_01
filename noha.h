@@ -68,7 +68,6 @@ public:
 	
 	void pohyb(struct Poloha Ciel) ////// TOTO JE HLAVNE
 	{
-		//cout <<"OFA"<< magnitude(start,Ciel)<<endl;
 		ciel = Ciel;
 		Ciel.x = sqrtf(powf(magnitude(start,Ciel),2)-powf(fabs(Ciel.y-start.y),2)); ///nove X pre 2D
 		Ciel.z = 0;
@@ -86,16 +85,10 @@ public:
 			iteracia++;
 		}
 		
-		//cout << "\nChyba: " << magnitude(Ciel, point2)<<endl;
 		uhly();
 		
-		
-		
 	}
-
-	
-
-	
+		
 	struct Poloha fabrik(struct Poloha Start, struct Poloha End, float Dlzka) /// start je hodnota ktora sa pocita
 	{
 		vektor.x = Start.x - End.x;
@@ -107,10 +100,9 @@ public:
 		vektor.x = (vektor.x * Dlzka) + End.x;
 		vektor.y = (vektor.y * Dlzka) + End.y;
 
-		
-
 		return vektor;
 	}
+
 	void uhly()
 	{
 		uhol1 = rotacia(normalServa, start, ciel);

@@ -1,4 +1,5 @@
 #include "Poloha.h"
+#include <vector>
 class movement
 {
 public:
@@ -7,12 +8,9 @@ public:
 	int doleI = -50;
 	int hore = 10;
 
-	Poloha Ciel1;
-	Poloha Ciel2;
-	Poloha Ciel3;
-	Poloha Ciel4;
-	Poloha Ciel5;
-	Poloha Ciel6;
+	Poloha Ciel;
+	static vector <Poloha> ciel;
+
 
 	void move1(float X, float Z);
 
@@ -24,6 +22,12 @@ public:
 
 	movement()
 	{
+		ciel.push_back(Ciel);
+		ciel.push_back(Ciel);
+		ciel.push_back(Ciel);
+		ciel.push_back(Ciel);
+		ciel.push_back(Ciel);
+		ciel.push_back(Ciel);
 		normal();
 	}
 };
